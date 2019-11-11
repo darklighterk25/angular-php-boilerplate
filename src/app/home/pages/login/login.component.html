@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <!--User-->
+      <mat-form-field class="col mb-1">
+        <mat-label>Usuario</mat-label>
+        <mat-icon matPrefix class="mr-2" color="primary">account_circle</mat-icon>
+        <input matInput formControlName="username">
+        <mat-error *ngIf="form.get('username').errors?.required
+                          &&( form.get('username').dirty || form.get('username').touched )">
+          Este campo es requerido.
+        </mat-error>
+      </mat-form-field>
+      <!--Password-->
+      <mat-form-field class="col mb-3">
+        <mat-label>Contraseña</mat-label>
+        <mat-icon matPrefix class="mr-2" color="primary">lock</mat-icon>
+        <input matInput formControlName="password" type="password">
+        <mat-error *ngIf="form.get('password').errors?.required
+                          &&( form.get('password').dirty || form.get('password').touched )">
+          Este campo es requerido.
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="right">
+    <button mat-stroked-button (click)="login()" [disabled]="disableBtn" color="primary">Iniciar Sesión</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,36 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput required formControlName="name">
+    <mat-error *ngIf="form.get('name').errors?.required
+                          &&( form.get('name').dirty || form.get('name').touched )">
+      Este campo es requerido.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descripción</mat-label>
+    <input matInput required formControlName="description">
+    <mat-error *ngIf="form.get('description').errors?.required
+                          &&( form.get('description').dirty || form.get('description').touched )">
+      Este campo es requerido.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Costo</mat-label>
+    <input matInput required formControlName="cost">
+    <mat-error *ngIf="form.get('cost').errors?.required
+                          &&( form.get('cost').dirty || form.get('cost').touched )">
+      Este campo es requerido.
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Cantidad</mat-label>
+    <input matInput required formControlName="stock">
+    <mat-error *ngIf="form.get('stock').errors?.required
+                          &&( form.get('stock').dirty || form.get('stock').touched )">
+      Este campo es requerido.
+    </mat-error>
+  </mat-form-field>
+  <button mat-stroked-button (click)="submit()" [disabled]="disableBtn">{{title}}</button>
+  <button mat-stroked-button (click)="cancel()" color="warn">Cancelar</button>
+</form>

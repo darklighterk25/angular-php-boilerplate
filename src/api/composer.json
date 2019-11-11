@@ -1,0 +1,16 @@
+{
+  "name": "rafreaky/clothing-store-api",
+  "description": "Just a simple API.",
+  "type": "test",
+  "require": {
+    "mongodb/mongodb": "1.0.0",
+    "firebase/php-jwt": "^5.0"
+  },
+  "license": "ISC",
+  "authors": [
+    {
+      "name": "Rafael Alejandro Muñoz Guzmán",
+      "email": "rafael.mg@outlook.com"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+<h4>{{data.title}}</h4>
+<h6 *ngIf="data.description">{{data.description}}</h6>
+<button mat-stroked-button (click)="close(true)">Aceptar</button>
+<button mat-stroked-button color="warn" (click)="close(false)">Cancelar</button>

@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button mat-button color="primary" (click)="addArticle()">
+      <mat-icon>add</mat-icon>&nbsp;Agregar Artículo
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-paginator [pageSizeOptions]="[12, 24]" class="mat-elevation-z1" showFirstLastButtons></mat-paginator>
+<mat-progress-bar *ngIf="!dataSource" mode="indeterminate"></mat-progress-bar>
+
+<mat-grid-list [cols]="breakpoint" rowHeight="500px" (window:resize)="onResize($event)">
+  <mat-grid-tile *ngFor="let article of observable | async">
+    <app-article-card [article]="article" (edit)="editArticle($event)"
+                      (delete)="deleteArticle($event)"></app-article-card>
+  </mat-grid-tile>
+</mat-grid-list>
